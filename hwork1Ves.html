@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert ('Task 1.');
+        let tempC = +prompt('Print your current temperatue in Celsius:');
+        let tempF;
+        tempF = tempC*(9/5) + 32;
+        alert ('Now you can get your current temperature in Fahrenheit: '+tempF);
+        alert ('Task 2.');
+        let admin;
+        let name='Василий';
+        admin = name;
+        alert ('Let us present you our new administrator ' + admin);
+    </script>
+</head>
+<body>
+    <h2>Task 3.</h2>
+    <p>1000108</p>
+    <h2>Task 4.</h2>
+    <p>Пересказываю своими словами, как поняла. Без использования свойств async и defer сначала загружается скрипт, потом страница, при низкой скорости 
+        соединения загрузка страницы может существенно затянуться. При использовании вышеуказанных свойств загрузка страницы не связана с загрузкой скрипта.
+        Свойство async загружает скрипты одновременно с загрузкой страницы, при этом скрипты исполняются в том порядке, в каком они загрузились. Свойство 
+        defer  загружает скрипты после отрисовки страницы, и исполняются они в заданной последовательности, вне зависимости от скорости загрузки. На <a target="a_blank" href="https://learn.javascript.ru/script-async-defer">
+        JAVASCRIPT.RU</a> по поводу defer отдельно подчеркнуто, что работает это свойство только со сторонними скриптами и игнорируется браузерами, если в тэге
+        нет src. <a target="a_blank" href="https://tproger.ru/translations/script-execution-order/">Здесь</a> в статейке пишут, что и на async это тоже распространяется.
+    </p>
+
+</body>
+</html>
