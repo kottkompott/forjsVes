@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title> 
+    <script> 
+    function forRandom() {
+        var a = parseInt(Math.random()*(10 - -10) + -10);
+        var b = parseInt(Math.random()*(5 - -5) + -5);
+        var r; 
+        alert(a + ' и ' + b);
+        if(a >= 0 && b >= 0){
+            r = a - b;
+        }
+        else if(a < 0 && b <0){
+            r = a * b;
+        }
+        else if(a >= 0 && b < 0 || a < 0 && b >= 0){
+            r = a + b;
+        }
+        
+        alert(r);
+    }
+    function toCount() {
+        var a = prompt('Введите любое число в диапазоне от 0 до 15:')
+        switch(a){
+            case '0': 
+            alert('1');
+            case '1':
+            alert('2');
+            case '3': 
+            alert('4');
+            case '4':
+            alert('5');
+            case '5': 
+            alert('6');
+            case '6':
+            alert('7');
+            case '7': 
+            alert('8');
+            case '8':
+            alert('9');
+            case '9': 
+            alert('10');
+            case '10':
+            alert('11');
+            case '11': 
+            alert('12');
+            case '12':
+            alert('13');
+            case '13': 
+            alert('14');
+            case '14':
+            alert('15');
+            case '15': 
+            alert('Приехали!!!');
+            break;
+            default:
+            alert('Не попали в диапазон:((');
+        }      
+        
+    }
+    function forComp() {
+        alert(null > 0);
+        alert(null >= 0);
+        alert(null == 0);
+        alert(null <= 0);
+        alert(null < 0);        
+    }
+    function forPow(){
+        let val = +prompt("Введите число");
+        let pow = +prompt("Введите степень");
+        let res = power(val, pow);
+    function power(val, pow) {
+        if (pow == 1) {
+            return val;
+        } else if (pow == 0) {
+            return val=1;
+        } else {
+            return val * power(val, pow - 1);
+        }
+    }     
+    alert(res);  
+    }   
+    </script>  
+</head>
+<body>
+    <h1 class="">2d homework</h1>
+    <div class="for-homew">
+        <div class="for-task">
+            <h2 class="task-title">Task 1</h2>
+            <p>var a = 1, b = 1, c, d;</p>
+            <p>c = ++a; alert(c);           // 2 префиксный инкремент сначала увеличивает, потом возвращает (1+1)</p>
+            <p>d = b++; alert(d);           // 1 постфиксный инкремент сначала возвращает, потом увеличивает (1)</p>
+            <p>c = (2+ ++a); alert(c);      // 5 2+ а, увеличенное на предыдущем этапе до 2, предварительно увеличенное префиксным инкрементом, 
+                а потом возвращенное (2+1+2)</p>
+            <p>d = (2+ b++); alert(d);      // 4 2+ b, увеличенное на предыдущем этапе до 2, возвращенное постфиксным инкрементом (2+2),
+                а затем им увеличенное</p>
+            <p>alert(a);                    // 3 a после предыдущего этапа, увеличенное до 3</p>
+            <p>alert(b);                    // 3 b после предыдущего этапа, увеличенное до 3
+            </p>
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 2</h2>
+            <p>var a = 2;</p>
+            <p>var x = 1 + (a *= 2); // 5 (1 + 2*2)
+            </p>
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 3</h2>
+            <p><input type="button" value="Посчитать рандомные числа" onclick="forRandom()"></p>
+            <p>Сначала выведет числа, потом результат, в функцию завернуто, потому что не знаю, как по-другому к кнопке прикрутить:((</p>
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 4</h2>
+            <p><input type="button" value="Посчитать до 15" onclick="toCount()"></p>
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 5-6</h2>
+            <p><a href="5-6.html" target="_blank">5-6.html откроется в новом окне</a> </p>        
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 7</h2>
+            <p><input type="button" value="Сравнение ничего с 0" onclick="forComp()"></p>
+            <p>Сравниваем:</p>
+            <ol class="for-list">
+                <li>null > 0; // false</li>
+                <li>null >= 0; // true</li>
+                <li>null == 0; // false</li>
+                <li>null <= 0; // true</li>
+                <li>null < 0; // false</li>
+            </ol>
+            <p>Причина таких результатов в том, что при нестрогом сравнении/равенстве null преобразуется в число и рассматривается
+                как 0, поэтому для ">=" и "<=" результат true. При строгом сравнении результат false, так как 0 - это число, а null - 
+                специальное значение для "ничего". Вычитала 
+                <a href="https://learn.javascript.ru/comparison#sravnenie-s-null-i-undefined" target="_blank">здесь</a>.
+            </p>
+        </div>
+        <div class="for-task">
+            <h2 class="task-title">Task 8</h2>
+            <p><input type="button" value="Возвести" onclick="forPow()"></p>
+            <p>Списала <a href="https://learn.javascript.ru/recursion#dva-sposoba-myshleniya" target="_blank">отсюда</a>. Для отрицательных 
+            степеней не придумала, как сделать.</p>
+        </div>
+    </div>
+</body>
+</html>
